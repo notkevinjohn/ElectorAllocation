@@ -1,0 +1,65 @@
+#!/usr/bin/python3
+
+from HuntingtonHill import HuntingtonHill
+from DirectDemocracy import DirectDemocracy
+
+States = {}
+Seats = 435
+
+#Load State Data
+with open("data.csv") as data:
+        for item in data:
+                stateData = item.strip().split(",")
+                Name = stateData[0].strip()
+                Code = stateData[1].strip()
+                Population = stateData[2].strip()
+                Party = stateData[3].strip()
+                States[Code]={}
+                States[Code]['Code'] = Code
+                States[Code]['Name'] = Name
+                States[Code]['Population'] = int(Population)
+                States[Code]['Seats'] = 1
+                States[Code]['Party'] = Party
+
+allocator = HuntingtonHill()
+allocator.allocate(Seats, States)
+
+#Add DC
+States['DC']={}
+States['DC']['Code'] = "DC"
+States['DC']['Name'] = "District of Columbia"
+States['DC']['Population'] = 572059
+States['DC']['Seats'] = 3
+States['DC']['Party'] = 'D'
+
+#Add Senators
+for state in States:
+        States[state]['Seats'] += 2
+
+#Calculate Totals
+DSeats = 0
+DPop = 0
+RSeats = 0
+RPop = 0
+for state in States:
+	stateData = States[state]
+	print (stateData)
+	if stateData['Party'] == 'D':
+		DSeats+=stateData['Seats']
+		DPop+=stateData['Population']
+
+	if stateData['Party'] == 'R':
+		RSeats+=stateData['Seats']
+		RPop+=stateData['Population']
+
+print()
+print ("Seats")
+print ("Republicans:", RSeats)
+print ("Democrats:", DSeats)
+print ("Total", RSeats + DSeats)
+
+print()
+print ("Population")
+print ("Republicans:", RPop)
+print ("Democrats:", DPop)
+print ("Total", RPop + DPop)

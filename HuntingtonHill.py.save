@@ -1,0 +1,90 @@
+#!/usr/bin/python3
+import json
+import time
+import math
+
+States = {}
+Seats = 435
+
+def selectState():
+	selectedState = None
+	highestQ = 0
+	for state in States:
+		stateCurrent = States[state]
+		Q = huntingtonHill2(stateCurrent)
+		if Q > highestQ:
+			highestQ = Q
+			selectedState = stateCurrent
+	return selectedState, Q
+
+def huntingtonHill(state):
+	return state['Population'] / math.sqrt(state['Seats'] * ( state['Seats'] + 1))
+
+def arithmeticMean(state):
+	return state['Population'] / (state['Seats'] + ( state['Seats'] + 1))/2
+
+def huntingtonHill2(state):
+	return state['Population'] / pow(state['Seats'] * ( state['Seats'] + 1), 1/10)
+
+
+with open("data.csv") as data:
+	for item in data:
+		stateData = item.strip().split(",")
+		Name = stateData[0].strip()
+		Code = stateData[1].strip()
+		Population = stateData[2].strip()
+		Party = stateData[3].strip()
+		States[Code]={}
+		States[Code]['Code'] = Code
+		States[Code]['Name'] = Name
+		States[Code]['Population'] = int(Population)
+		States[Code]['Seats'] = 1
+		States[Code]['Party'] = Party
+		Seats -= 1
+
+while Seats > 0:
+	state,Q = selectState()
+	state['Seats'] += 1
+	Seats -= 1
+	if Seats == 0:
+		break
+
+
+for state in States:
+	States[state]['Seats'] += 2
+
+States['DC']={}
+States['DC']['Code'] = "DC"
+States['DC']['Name'] = "District of Columbia"
+States['DC']['Population'] = 572059
+States['DC']['Seats'] = 3
+States['DC']['Party'] = 'D'
+
+
+DSeats = 0
+DPop = 0
+RSeats = 0
+RPop = 0
+for state in States:
+	stateData = States[state]
+	print (stateData)
+	if stateData['Party'] == 'R':
+		RSeats+=stateData['Seats']
+		RPop+=stateData['Population']
+	elif stateData['Party'] == 'D':
+		DSeats+=stateData['Seats']
+		DPop+=stateData['Population']
+	else:
+		print ("ERROR")
+
+print()
+print ("Seats")
+print ("Republicans:", RSeats)
+print ("Democrats:", DSeats)
+print ("Total", RSeats + DSeats)
+
+print()
+print ("Population")
+print ("Republicans:", RPop)
+print ("Democrats:", DPop)
+print ("Total", RPop + DPop)

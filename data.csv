@@ -1,50 +1,50 @@
-Alabama,  AL, 4903185
-Alaska,  AK, 731545
-Arizona,  AZ, 7278717
-Arkansas,  AR, 3017825
-California,  CA, 39512223
-Colorado,  CO, 5758736
-Connecticut,  CT, 3565287
-Delaware,  DE, 973764
-Florida,  FL, 21477737
-Georgia,  GA, 10617423
-Hawaii,  HI, 1415872
-Idaho,  ID, 1787065
-Illinois,  IL, 12671821
-Indiana,  IN, 6732219
-Iowa,  IA, 3155070
-Kansas,  KS, 2913314
-Kentucky,  KY, 4467673
-Louisiana,  LA, 4648794
-Maine,  ME, 1344212
-Maryland,  MD, 6045680
-Massachusetts,  MA, 6949503
-Michigan,  MI, 9986857
-Minnesota,  MN, 5639632
-Mississippi,  MS, 2976149
-Missouri,  MO, 6137428
-Montana,  MT, 1068778
-Nebraska,  NE, 1934408
-Nevada,  NV, 3080156
-New Hampshire,  NH, 1359711
-New Jersey,  NJ, 8882190
-New Mexico,  NM, 2096829
-New York,  NY, 19453561
-North Carolina,  NC, 10488084
-North Dakota,  ND, 762062
-Ohio,  OH, 11689100
-Oklahoma,  OK, 3956971
-Oregon,  OR, 4217737
-Pennsylvania,  PA, 12801989
-Rhode Island,  RI, 1059361
-South Carolina,  SC, 5148714
-South Dakota,  SD, 884659
-Tennessee,  TN, 6833174
-Texas,  TX, 28995881
-Utah,  UT, 3205958
-Vermont,  VT, 623989
-Virginia,  VA, 8535519
-Washington,  WA, 7614893
-West Virginia,  WV, 1792147
-Wisconsin,  WI, 5822434
-Wyoming,  WY, 578759
+Alabama,  AL, 4779736, R
+Alaska,  AK, 710231, R
+Arizona,  AZ, 6392017, R
+Arkansas,  AR, 2915918, R
+California,  CA, 37253956, D
+Colorado,  CO, 5029196, D
+Connecticut,  CT, 3574097, D
+Delaware,  DE, 897934, D
+Florida,  FL, 18801310, R
+Georgia,  GA, 9687653, R
+Hawaii,  HI, 1360301, D
+Idaho,  ID, 1567582, R
+Illinois,  IL, 12830632, D
+Indiana,  IN, 6483802, R
+Iowa,  IA, 3046355, R
+Kansas,  KS, 2853118, R
+Kentucky,  KY, 4339367, R
+Louisiana,  LA, 4533372, R
+Maine,  ME, 1328361, D
+Maryland,  MD, 5773552, D
+Massachusetts,  MA, 6547629, D
+Michigan,  MI, 9883640, R
+Minnesota,  MN, 5303925, D
+Mississippi,  MS, 2967297, R
+Missouri,  MO, 5988927, R
+Montana,  MT, 989415, R
+Nebraska,  NE, 1826341, R
+Nevada,  NV, 2700551, D
+New Hampshire,  NH, 1316470, D
+New Jersey,  NJ, 8791894, D
+New Mexico,  NM, 2059179, D
+New York,  NY, 19378102, D
+North Carolina,  NC, 9535483, R
+North Dakota,  ND, 672591, R
+Ohio,  OH, 11536504, R
+Oklahoma,  OK, 3751351, R
+Oregon,  OR, 3831074, D
+Pennsylvania,  PA, 12702379, R
+Rhode Island,  RI, 1052567, D
+South Carolina,  SC, 4625364, R
+South Dakota,  SD, 814180, R
+Tennessee,  TN, 6346105, R
+Texas,  TX, 25145561, R
+Utah,  UT, 2763885, R
+Vermont,  VT, 625741, D
+Virginia,  VA, 8001024, D
+Washington,  WA, 6724540, D
+West Virginia,  WV, 1852994, R
+Wisconsin,  WI, 5686986, R
+Wyoming,  WY, 563626, R
