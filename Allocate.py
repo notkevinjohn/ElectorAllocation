@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+import sys
 from HuntingtonHill import HuntingtonHill
 from HuntingtonHill_NoSenators import HuntingtonHill_NoSenators
 from DirectDemocracy import DirectDemocracy
@@ -8,6 +8,10 @@ from ConfigLoader import ConfigLoader
 from CSVLoader import CSVLoader
 from Validator import Validator
 
+#Parse Arguments
+allocatorArg = sys.argv[1].split(".")[0]
+print (allocatorArg)
+
 #Load Data
 configLoader = ConfigLoader("Config.xml")
 config = configLoader.config
@@ -15,7 +19,7 @@ config = configLoader.config
 csvLoader = CSVLoader("ElectionData.csv")
 data = csvLoader.data
 
-allocator = DirectDemocracy()
+exec("allocator = "+allocatorArg+"()")
 allocator.allocate(config['Electors'], data)
 validator = Validator()
 
@@ -26,5 +30,5 @@ for key in data:
 	state = data[key]
 	print (key, state['electors'])
 
-dc = DemocracyQuotient().calc(data)
-print(dc)
+dq = DemocracyQuotient().calc(data)
+print("Democracy Qoutient: ",dq)
