@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import math
 
-class HuntingtonHill():
+class HuntingtonHill_NoSenators():
 
 	initialElectors = 1
 
@@ -30,16 +30,10 @@ class HuntingtonHill():
 			self.Electors -= self.initialElectors
 
 		#Assign population based Electors
-		while self.Electors > 102:
+		while self.Electors > 0:
 			state = self.selectState()
 			state['electors'] += 1
 			self.Electors -= 1
-
-		#Assign Senators
-		for key in self.StateData:
-			state = self.StateData[key]
-			state['electors'] += 2
-			self.Electors -= 2
 
 
 
