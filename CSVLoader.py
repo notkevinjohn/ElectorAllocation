@@ -1,8 +1,13 @@
 class CSVLoader():
 	data = {}
 	def __init__(self, dataFile):
+		skipFirst = True
 		with open(dataFile) as data:
 			for line in data:
+				if skipFirst == True:
+					skipFirst = False
+					continue
+
 				dataLine = (line.strip().split(","))
 				name = dataLine[0]
 				abbreviation = dataLine[1]

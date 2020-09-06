@@ -15,6 +15,10 @@ data = csvLoader.data
 allocator = HuntingtonHill()
 allocator.allocate(config['Electors'], data)
 
+#for key in data:
+#	state = data[key]
+#	print (key, state['electors'])
+
 #Add DC
 #States['DC']={}
 #States['DC']['Code'] = "DC"
