@@ -25,7 +25,6 @@ class DirectDemocracy():
 			allocated += 1
 
 
-
 	def largestRemainder(self, StateData):
 		remainder = 0
 		for key in StateData:

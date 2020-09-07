@@ -19,5 +19,4 @@ class DemocracyQuotient():
 		minStateElectors = int(minPopState['electors'])
 		quotientMin = (minStateElectors/minStatePop)
 		quotientMax = (maxStateElectors/maxStatePop)
-		print (quotientMin, quotientMax)
 		return quotientMin/quotientMax
