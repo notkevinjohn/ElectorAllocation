@@ -22,8 +22,7 @@ class DirectDemocracy():
 		while allocated < int(Electors):
 			state = self.largestRemainder(StateData)
 			state['electors']+=1
-			allocated += 1
-
+			allocated+=1
 
 	def largestRemainder(self, StateData):
 		remainder = 0
