@@ -1,10 +1,7 @@
 #!/usr/bin/python3
 import sys
 from HuntingtonHill import HuntingtonHill
-from HuntingtonHill_NoSenators import HuntingtonHill_NoSenators
-from HuntingtonHill_OOP import HuntingtonHill_OOP
-from DirectDemocracy import DirectDemocracy
-from DirectDemocracy_Senators import DirectDemocracy_Senators
+from HamiltonVinton import HamiltonVinton
 from DemocracyQuotient import DemocracyQuotient
 from Validator import Validator
 
@@ -20,8 +17,9 @@ class Allocator():
 		self.allocator.allocate(self.electors, self.data)
 		validator = Validator()
 
-		if not validator.validate(self.electors, self.data):
-			raise Exception("Correct Number of Electors Not Allocated")
+		valid, allocated = validator.validate(self.electors, self.data)
+		if not valid:
+			raise Exception("Correct Number of Electors Not Allocated: "+str(allocated))
 
 		dq = DemocracyQuotient().calc(self.data)
 		return self.data, dq

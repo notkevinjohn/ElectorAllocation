@@ -1,7 +1,6 @@
 import sys
 from Allocator import Allocator
 from Awarder import Awarder
-#from ConfigLoader import ConfigLoader
 from CSVLoader import CSVLoader
 import time
 
@@ -10,9 +9,6 @@ class Election():
 		self.allocation = allocation
 		self.awarding = awarding
 		self.electors = electors
-
-		#configLoader = ConfigLoader("Config.xml")
-		#self.config = configLoader.config
 
 		csvLoader = CSVLoader("ElectionData.csv")
 		self.data = csvLoader.data
@@ -23,8 +19,8 @@ class Election():
 
 		awarder = Awarder(self.awarding, self.electors, self.data)
 		votes_r, votes_d  = awarder.award()
-		#for key in data:
-		#	print (key, data[key]['electors'])
+		for key in data:
+			print (key) #data[key]['electors'])
 		print ('R:'+str(votes_r), 'D:'+str(votes_d), dq)
 
 if __name__=="__main__":

@@ -4,4 +4,4 @@ class Validator():
 		for key in StateData:
 			state = StateData[key]
 			allocated += float(state['electors'])
-		return  int(Electors) == allocated
+		return  int(Electors) == allocated, allocated

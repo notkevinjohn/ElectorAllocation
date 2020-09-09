@@ -1,6 +1,5 @@
 import sys
 from Allocator import Allocator
-from ConfigLoader import ConfigLoader
 from CSVLoader import CSVLoader
 import time
 
